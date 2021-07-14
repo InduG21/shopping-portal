@@ -19,7 +19,13 @@ pipeline {
       steps {
         echo 'this is the package job'
         sh 'npm run package'
-        }
+      }
+    }
+
+    stage('') {
+      steps {
+        archiveArtifacts '**/distribution/*.zip'
+      }
     }
 
   }
